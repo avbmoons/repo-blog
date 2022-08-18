@@ -1,0 +1,25 @@
+{
+    "name": "elena/app-blog",
+    "autoload": {
+        "psr-4": {
+            "Elena\\AppBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "avbmoons",
+            "email": "88578581+avbmoons@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*",
+        "fakerphp/faker": "^1.20",
+        "symfony/polyfill-uuid": "^1.26"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "phpunit tests --testdox -- colors"
+    }
+}
