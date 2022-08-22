@@ -1,0 +1,45 @@
+@hostname = http://localhost:80
+
+
+GET {{hostname}} HTTP/1.1
+//Cookie: XDEBUG_SESSION=start
+
+###
+
+GET {{hostname}}/some/path?some_parameter=123 HTTP/1.1
+Some-Header: Some Value
+
+###
+
+GET {{hostname}}/users/show?username=ivan HTTP/1.1
+
+###
+
+POST {{hostname}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "message": "hello world!"
+}
+
+###
+
+POST {{hostname}}/posts/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "author_uuid": "877e21d4-6785-4de1-aa6c-66db92d8ff88",
+    "text": "some text",
+    "title": "some title"
+}
+
+###
+
+POST {{hostname}}/comments/create HTTP/1.1
+
+{
+    "post_uuid": "8c4db23d-931d-4dd0-9c33-5eec4ee3cc58",
+    "author_uuid": "6a3fc0cf-c30c-41d8-93ab-b5827f78d6d6",
+    "text": "some text",
+}
+
